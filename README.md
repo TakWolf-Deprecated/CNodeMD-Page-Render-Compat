@@ -2,7 +2,7 @@
 
 主要为 [CNode-Material-Design](https://github.com/TakWolf/CNode-Material-Design) 在Markdown渲染上提供一种兼容方案
 
-该问题来源于 [issues#26@TakWolf/CNode-Material-Design](https://github.com/TakWolf/CNode-Material-Design/issues/26)
+该问题来源于 [TakWolf/CNode-Material-Design#26](https://github.com/TakWolf/CNode-Material-Design/issues/26)
 
 主要思路是，通过一个WebView渲染整个列表页面，以减轻和回避现有列表渲染方案出现的各种问题
 
