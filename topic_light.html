@@ -9,6 +9,53 @@
 </head>
 <body>
 
+<div id="page">
+    <div v-if="topic.id">
+        <div class="header">
+            <h1 class="title text-primary">
+                {{topic.title}}
+            </h1>
+
+
+            <!-- TODO -->
+
+
+            <div class="markdown-container">
+                {{{topic.rendered_content}}}
+            </div>
+        </div>
+        <div class="item-gap"></div>
+        <div class="list">
+            <div v-if="topic.replies.length <= 0">
+                <div class="no-reply text-secondary">
+                    暂无回复
+                </div>
+            </div>
+            <div v-if="topic.replies.length > 0">
+                <div class="reply-count text-primary">
+                    {{topic.replies.length}}条回复
+                </div>
+                <div class="deep-line"></div>
+                <div class="cell" v-for="(position, reply) of topic.replies">
+                    <div class="main">
+
+
+
+
+                        <div class="target-position text-accent" v-if="reply.reply_id">
+                            回复：{{positionMap[reply.reply_id] + 1}}楼
+                        </div>
+                        <div class="markdown-container">
+                            {{{reply.rendered_content}}}
+                        </div>
+                    </div>
+                    <div class="deep-line" v-if="position !== (topic.replies.length - 1)"></div>
+                </div>
+            </div>
+        </div>
+        <div class="item-gap"></div>
+    </div>
+</div>
 
 <script src="js/jquery-2.2.3.js"></script>
 <script src="js/vue-1.0.22.js"></script>

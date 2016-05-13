@@ -2,11 +2,11 @@
 window.notificationBridge = {
 
     openTopic: function (topicId) {
-        alert('open topic : ' + topicId)
+        alert('open topic : ' + topicId);
     },
 
     openUser: function (loginName) {
-        alert('open user : ' + loginName)
+        alert('open user : ' + loginName);
     }
 
 };
