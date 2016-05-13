@@ -94,7 +94,6 @@ body {
 }
 
 .header .top-container .avatar {
-    float: left;
     width: 44px;
     height: 44px;
     border-radius: 50%;
@@ -124,16 +123,6 @@ body {
     font-size: 14px;
 }
 
-
-
-
-
-
-
-
-
-
-
 .header .markdown-container {
     padding: 16px;
 }
@@ -162,35 +151,57 @@ body {
     padding-right: 16px;
 }
 
+.list .cell .main .top-container .left {
+}
+
+.list .cell .main .top-container .center {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.list .cell .main .top-container .right1 {
+}
+
+.list .cell .main .top-container .right2 {
+}
+
+.list .cell .main .top-container .right3 {
+}
+
 .list .cell .main .top-container .avatar {
-    float: left;
     width: 44px;
     height: 44px;
     border-radius: 50%;
     background-color: #eeeeee;
 }
 
-.list .cell .main .top-container .info {
-    height: 44px;
-    margin-left: 60px;
-
-    background-color: #795da3;
+.list .cell .main .top-container .line1 {
 }
 
-.list .cell .main .top-container .right {
-    float: right;
-    width: 44px;
-    height: 44px;
-
-    background-color: #00ff00;
+.list .cell .main .top-container .line2 {
+    margin-top: 4px;
 }
 
+.list .cell .main .top-container .loginname {
+    font-size: 16px;
+}
 
+.list .cell .main .top-container .index {
+    font-size: 14px;
+}
 
+.list .cell .main .top-container .dot {
+    font-size: 14px;
+}
 
+.list .cell .main .top-container .create-time {
+    font-size: 14px;
+}
 
-
-
+.list .cell .main .top-container .up-count {
+    font-size: 14px;
+}
 
 .list .cell .main .target-position {
     padding-top: 16px;

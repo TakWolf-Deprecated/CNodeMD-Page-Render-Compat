@@ -19,10 +19,10 @@ window.topicBridge = {
 
     upReply: function (replyJson) {
         var reply = JSON.parse(replyJson);
-        if (reply.ups.indexOf(vmPage.accessToken) == -1) {
-            reply.ups.push(vmPage.accessToken);
+        if (reply.ups.indexOf(vmPage.userId) === -1) {
+            reply.ups.push(vmPage.userId);
         } else {
-            reply.ups.splice(reply.ups.indexOf(vmPage.accessToken), 1);
+            reply.ups.splice(reply.ups.indexOf(vmPage.userId), 1);
         }
         updateReply(reply);
     },

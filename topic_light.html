@@ -12,7 +12,7 @@
 <div id="page">
     <div v-if="topic.id">
         <div class="header">
-            <img class="tab-good" src="img/tab_ic_good.png">
+            <img class="tab-good" src="img/tab_ic_good.png" v-if="topic.good">
             <h1 class="title text-primary">
                 {{topic.title}}
             </h1>
@@ -34,7 +34,7 @@
                             </div>
                         </td>
                         <td class="right">
-                            <img class="icon-button" v-bind:src="topic.is_collect ? 'img/ic_favorite_24px.svg' : 'img/ic_favorite_outline_24px.svg'" v-on:click="collectTopic(topic)">
+                            <img class="icon-button" v-bind:src="topic.is_collect ? 'img/ic_favorite_theme_24px.svg' : 'img/ic_favorite_outline_grey_24px.svg'" v-on:click="collectTopic(topic)">
                         </td>
                     </tr>
                 </table>
@@ -58,20 +58,32 @@
                 <div class="cell" v-for="(position, reply) of topic.replies">
                     <div class="main">
                         <div class="top-container">
-                            <img class="avatar" v-bind:src="reply.author.avatar_url" v-on:click="openUser(reply.author.loginname)">
-                            <div class="info">
-
-
-                            </div>
-                            <div class="right">
-                                    <span>
-                                        <img class="icon-button" src="img/ic_reply_24px.svg">
-                                        <span class="icon-text text-secondary">{{reply.ups.length}}</span>
-                                    </span>
-                                    <span>
-                                        <img class="icon-button" src="img/ic_reply_24px.svg">
-                                    </span>
-                            </div>
+                            <table>
+                                <tr>
+                                    <td class="left">
+                                        <img class="avatar" v-bind:src="reply.author.avatar_url" v-on:click="openUser(reply.author.loginname)">
+                                    </td>
+                                    <td class="center">
+                                        <div class="line1">
+                                            <span class="loginname text-primary">{{topic.author.loginname}}</span>
+                                        </div>
+                                        <div class="line2">
+                                            <span class="index text-accent">{{position + 1}}楼</span>
+                                            <span class="dot text-secondary">•</span>
+                                            <span class="create-time text-secondary">{{reply.create-time | recentlyTimeText}}</span>
+                                        </div>
+                                    </td>
+                                    <td class="right1">
+                                        <img class="icon-button" v-bind:src="reply.ups.indexOf(userId) === -1 ? 'img/ic_thumb_up_grey_24px.svg' : 'img/ic_thumb_up_theme_24px.svg'" v-on:click="upReply(reply)">
+                                    </td>
+                                    <td class="right2">
+                                        <span class="up-count icon-text text-secondary">{{reply.ups.length}}</span>
+                                    </td>
+                                    <td class="right3">
+                                        <img class="icon-button" src="img/ic_reply_grey_24px.svg" v-on:click="at(reply, positionMap)">
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                         <div class="target-position text-accent" v-if="reply.reply_id">
                             回复：{{positionMap[reply.reply_id] + 1}}楼

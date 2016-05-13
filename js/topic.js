@@ -43,7 +43,7 @@ Vue.filter('tabName', function (topic) {
     if (topic.top) {
         return '置顶';
     } else {
-        switch (tab) {
+        switch (topic.tab) {
             case 'share':
                 return '分享';
             case 'ask':
@@ -59,7 +59,7 @@ Vue.filter('tabName', function (topic) {
 var vmPage = new Vue({
     el: '#page',
     data: {
-        accessToken: '',
+        userId: '',
         topic: {},
         positionMap: {}
     },
@@ -77,7 +77,7 @@ var vmPage = new Vue({
             window.topicBridge.upReply(JSON.stringify(reply));
         },
 
-        at: function (reply) {
+        at: function (reply, positionMap) {
             window.topicBridge.at(JSON.stringify(reply), positionMap[reply.id]);
         },
 
@@ -97,9 +97,9 @@ vmPage.$watch('topic', function () {
     });
 });
 
-function updateTopicAndAccessToken(topic, accessToken) {
+function updateTopicAndUserId(topic, userId) {
     vmPage.topic = topic;
-    vmPage.accessToken = accessToken;
+    vmPage.userId = userId;
     var positionMap = {};
     if (topic.replies) {
         for (var i = 0; i < topic.replies.length; i++) {
@@ -121,7 +121,7 @@ function updateReply(reply) {
         for (var i = 0; i < vmPage.topic.replies.length; i++) {
             var replyN = vmPage.topic.replies[i];
             if (replyN.id === reply.id) {
-                vmPage.topic.replies[i] = reply;
+                vmPage.topic.replies.splice(i, 1, reply);
                 break;
             }
         }
