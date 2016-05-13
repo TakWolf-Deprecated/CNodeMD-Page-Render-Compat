@@ -54,13 +54,13 @@ vmPage.$watch('topic', function () {
     });
 });
 
-function updateTopicAndAccessToken(data) {
-    vmPage.accessToken = data.accessToken;
-    vmPage.topic = data.topic;
+function updateTopicAndAccessToken(topic, accessToken) {
+    vmPage.topic = topic;
+    vmPage.accessToken = accessToken;
     var positionMap = {};
-    if (data.topic.replies) {
-        for (var i = 0; i < data.topic.replies.length; i++) {
-            var reply = data.topic.replies[i];
+    if (topic.replies) {
+        for (var i = 0; i < topic.replies.length; i++) {
+            var reply = topic.replies[i];
             positionMap[reply.id] = i;
         }
     }
