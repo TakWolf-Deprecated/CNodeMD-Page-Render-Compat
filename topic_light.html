@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
@@ -12,14 +12,33 @@
 <div id="page">
     <div v-if="topic.id">
         <div class="header">
+            <img class="tab-good" src="img/tab_ic_good.png">
             <h1 class="title text-primary">
                 {{topic.title}}
             </h1>
-
-
-            <!-- TODO -->
-
-
+            <div class="top-container">
+                <table>
+                    <tr>
+                        <td class="left">
+                            <img class="avatar" v-bind:src="topic.author.avatar_url" v-on:click="openUser(topic.author.loginname)">
+                        </td>
+                        <td class="center">
+                            <div class="line1">
+                                <span v-bind:class="{'tag-accent': topic.top, 'tag-normal': !topic.top}">{{topic | tabName}}</span>
+                                <span class="loginname text-primary">{{topic.author.loginname}}</span>
+                            </div>
+                            <div class="line2">
+                                <span class="create-time text-secondary">{{topic.create_at | recentlyTimeText}}创建</span>
+                                <span class="dot text-secondary">•</span>
+                                <span class="visit-count text-secondary">{{topic.visit_count}}次浏览</span>
+                            </div>
+                        </td>
+                        <td class="right">
+                            <img class="icon-button" v-bind:src="topic.is_collect ? 'img/ic_favorite_24px.svg' : 'img/ic_favorite_outline_24px.svg'" v-on:click="collectTopic(topic)">
+                        </td>
+                    </tr>
+                </table>
+            </div>
             <div class="markdown-container">
                 {{{topic.rendered_content}}}
             </div>
@@ -38,10 +57,22 @@
                 <div class="deep-line"></div>
                 <div class="cell" v-for="(position, reply) of topic.replies">
                     <div class="main">
+                        <div class="top-container">
+                            <img class="avatar" v-bind:src="reply.author.avatar_url" v-on:click="openUser(reply.author.loginname)">
+                            <div class="info">
 
 
-
-
+                            </div>
+                            <div class="right">
+                                    <span>
+                                        <img class="icon-button" src="img/ic_reply_24px.svg">
+                                        <span class="icon-text text-secondary">{{reply.ups.length}}</span>
+                                    </span>
+                                    <span>
+                                        <img class="icon-button" src="img/ic_reply_24px.svg">
+                                    </span>
+                            </div>
+                        </div>
                         <div class="target-position text-accent" v-if="reply.reply_id">
                             回复：{{positionMap[reply.reply_id] + 1}}楼
                         </div>

@@ -19,6 +19,31 @@ body {
     color: #80bd01;
 }
 
+.tag-normal {
+    padding: 2px 4px;
+    color: #757575;
+    font-size: 12px;
+    background-color: #eeeeee;
+    border-radius: 4px;
+}
+
+.tag-accent {
+    padding: 2px 4px;
+    color: #ffffff;
+    font-size: 12px;
+    background-color: #80bd01;
+    border-radius: 4px;
+}
+
+.icon-button {
+    padding: 8px;
+}
+
+.icon-text {
+    padding: 8px 8px 8px 0;
+    font-size: 14px;
+}
+
 .deep-line {
     width: 100%;
     height: 1px;
@@ -37,15 +62,75 @@ body {
     box-shadow: 0 2px 2px #aaaaaa;
 }
 
+.header .tab-good {
+    position: absolute;
+    width: auto;
+    height: 40px;
+    padding: 16px;
+    right: 0;
+}
+
 .header .title {
     padding: 16px;
     font-size: 18px;
     font-weight: bold;
 }
 
+.header .top-container {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.header .top-container .left {
+}
+
+.header .top-container .center {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.header .top-container .right {
+}
+
+.header .top-container .avatar {
+    float: left;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #eeeeee;
+}
+
+.header .top-container .line1 {
+}
+
+.header .top-container .line2 {
+    margin-top: 4px;
+}
+
+.header .top-container .loginname {
+    font-size: 16px;
+}
+
+.header .top-container .create-time {
+    font-size: 14px;
+}
+
+.header .top-container .dot {
+    font-size: 14px;
+}
+
+.header .top-container .visit-count {
+    font-size: 14px;
+}
 
 
-/* TODO */
+
+
+
+
+
+
 
 
 
@@ -70,6 +155,36 @@ body {
     padding: 16px;
     font-size: 16px;
 }
+
+.list .cell .main .top-container {
+    padding-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.list .cell .main .top-container .avatar {
+    float: left;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #eeeeee;
+}
+
+.list .cell .main .top-container .info {
+    height: 44px;
+    margin-left: 60px;
+
+    background-color: #795da3;
+}
+
+.list .cell .main .top-container .right {
+    float: right;
+    width: 44px;
+    height: 44px;
+
+    background-color: #00ff00;
+}
+
 
 
 
