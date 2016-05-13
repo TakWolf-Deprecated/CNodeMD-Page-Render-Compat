@@ -1,8 +1,8 @@
 
 window.imageBridge = {
 
-    openImage: function (image_url) {
-        alert('open image : ' + image_url)
+    openImage: function (imageUrl) {
+        alert('open image : ' + imageUrl)
     }
 
 };
