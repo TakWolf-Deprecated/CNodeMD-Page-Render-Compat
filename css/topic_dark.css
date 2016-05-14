@@ -20,7 +20,7 @@ body {
 }
 
 .tag-normal {
-    padding: 2px 4px;
+    padding: 1px 4px;
     color: #cccccc;
     font-size: 12px;
     background-color: #555555;
@@ -28,7 +28,7 @@ body {
 }
 
 .tag-accent {
-    padding: 2px 4px;
+    padding: 1px 4px;
     color: #ffffff;
     font-size: 12px;
     background-color: #80bd01;
