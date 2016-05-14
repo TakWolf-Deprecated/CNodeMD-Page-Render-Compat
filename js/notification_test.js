@@ -1,8 +1,7 @@
 
+var accessToken = 'your access token';
+
 function test() {
-
-    var accessToken = 'your access token';
-
     fetch('https://cnodejs.org/api/v1/messages?accesstoken=' + accessToken + '&mdrender=true')
         .then(function (res) {
             return res.json();
@@ -22,7 +21,6 @@ function test() {
         .catch(function (e) {
            console.error(e);
         });
-
 }
 
 setTimeout(test, 2000);
