@@ -20,7 +20,7 @@ function login() {
 }
 
 function test(userId) {
-    fetch('https://cnodejs.org/api/v1/topic/5720db8035af8a704195f4db?accesstoken=' + accessToken + '&mdrender=true')
+    fetch('https://cnodejs.org/api/v1/topic/559bd1b91e5c761761468884?accesstoken=' + accessToken + '&mdrender=true')
         .then(function (res) {
             return res.json();
         })
