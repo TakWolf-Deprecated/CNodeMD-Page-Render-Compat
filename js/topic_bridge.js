@@ -1,14 +1,6 @@
 
 window.topicBridge = {
-
-    onScrollUp: function () {
-        console.log('on scroll up');
-    },
-
-    onScrollDown: function () {
-        console.log('on scroll down');
-    },
-
+    
     collectTopic: function (topicId) {
         vmPage.topic.is_collect = true;
     },
