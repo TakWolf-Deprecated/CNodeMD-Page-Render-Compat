@@ -43,5 +43,5 @@ function test(userId) {
 setTimeout(login, 500);
 
 function scrollDown() {
-    $('body').animate({scrollTop: $('body')[0].scrollHeight}, 400);
+    window.scrollTo(0, document.body.clientHeight);
 }
