@@ -1,6 +1,6 @@
 
 window.topicBridge = {
-    
+
     collectTopic: function (topicId) {
         vmPage.topic.is_collect = true;
     },
@@ -22,9 +22,9 @@ window.topicBridge = {
     at: function (targetJson, targetPosition) {
         alert('at@' + targetPosition + ' : ' + targetJson);
     },
-    
+
     openUser: function (loginName) {
         alert('open user : ' + loginName);
     }
-    
+
 };

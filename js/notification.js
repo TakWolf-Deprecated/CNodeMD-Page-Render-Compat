@@ -43,11 +43,11 @@ var vmPage = new Vue({
         messages: []
     },
     methods: {
-        
+
         openTopic: function (topicId) {
             window.notificationBridge.openTopic(topicId);
         },
-        
+
         openUser: function (loginName) {
             window.notificationBridge.openUser(loginName);
         },
@@ -59,7 +59,7 @@ var vmPage = new Vue({
                 }
             }
         }
-        
+
     }
 });
 

@@ -78,7 +78,7 @@ var vmPage = new Vue({
                 }
             }
         }
-        
+
     }
 });
 
