@@ -50,18 +50,17 @@ var vmPage = new Vue({
         
         openUser: function (loginName) {
             window.notificationBridge.openUser(loginName);
+        },
+
+        openImageProxy: function (event) {
+            if (event.target.nodeName === 'IMG') {
+                if (event.target.parentNode.nodeName !== 'A') {
+                    window.imageBridge.openImage(event.target.src);
+                }
+            }
         }
         
     }
-});
-
-vmPage.$watch('messages', function () {
-    $('.markdown-text img').unbind('click').click(function () {
-        var img = $(this);
-        if (img.parent('a').length <= 0) {
-            window.imageBridge.openImage(img.attr('src'));
-        }
-    });
 });
 
 function updateMessages(messages) {
