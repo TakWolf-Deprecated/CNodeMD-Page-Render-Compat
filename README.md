@@ -20,8 +20,6 @@ UI上需要和原生渲染基本保持一致，包含白天和夜间两种主题
 
 - [Vue.js](http://cn.vuejs.org)
 
-- [jQuery](https://jquery.com)
-
 - [github-markdown-css](https://github.com/sindresorhus/github-markdown-css)
 
 ## Author ##
