@@ -26,9 +26,9 @@ function test(userId) {
         })
         .then(function (json) {
             if (json.success) {
-                json.data.rendered_content = json.data.content;
+                json.data.content_html = json.data.content;
                 json.data.replies.forEach(function (reply) {
-                    reply.rendered_content = reply.content;
+                    reply.content_html = reply.content;
                 });
                 updateTopicAndUserId(json.data, userId);
             } else {

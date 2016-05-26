@@ -6,11 +6,11 @@ function test(userId) {
         })
         .then(function (json) {
             if (json.success) {
-                json.data.rendered_content = json.data.content;
+                json.data.content_html = json.data.content;
                 json.data.replies.forEach(function (reply) {
-                    reply.rendered_content = reply.content;
+                    reply.content_html = reply.content;
                 });
-                updateContent(json.data.rendered_content);
+                updateContent(json.data.content_html);
             } else {
                 console.log(json.error_msg);
             }

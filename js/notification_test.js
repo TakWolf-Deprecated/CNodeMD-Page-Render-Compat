@@ -11,7 +11,7 @@ function test() {
                 var messages = json.data.hasnot_read_messages.concat(json.data.has_read_messages);
                 messages.forEach(function (message) {
                     message.has_read = false;
-                    message.reply.rendered_content = message.reply.content;
+                    message.reply.content_html = message.reply.content;
                 });
                 updateMessages(messages);
             } else {
