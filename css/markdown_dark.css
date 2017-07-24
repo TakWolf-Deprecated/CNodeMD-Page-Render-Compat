@@ -15,7 +15,7 @@
 }
 
 .markdown-text .pl-c {
-    color: #6a737d;
+    color: #cccccc;
 }
 
 .markdown-text .pl-c1,
@@ -116,7 +116,7 @@
 }
 
 .markdown-text .pl-mi2 {
-    color: #f6f8fa;
+    color: #555555;
     background-color: #005cc5;
 }
 
@@ -426,7 +426,7 @@
 
 .markdown-text blockquote {
     padding: 0 1em;
-    color: #6a737d;
+    color: #cccccc;
     border-left: 0.25em solid #dfe2e5;
 }
 
@@ -519,7 +519,7 @@
 
 .markdown-text h6 {
     font-size: 0.85em;
-    color: #6a737d;
+    color: #cccccc;
 }
 
 .markdown-text ul,
@@ -582,7 +582,7 @@
 }
 
 .markdown-text table tr:nth-child(2n) {
-    background-color: #f6f8fa;
+    background-color: #555555;
 }
 
 .markdown-text img {
@@ -636,7 +636,7 @@
     overflow: auto;
     font-size: 85%;
     line-height: 1.45;
-    background-color: #f6f8fa;
+    background-color: #555555;
     border-radius: 3px;
 }
 
