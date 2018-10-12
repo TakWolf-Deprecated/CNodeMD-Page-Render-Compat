@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -20,11 +20,11 @@
                 <table>
                     <tr>
                         <td class="left">
-                            <img class="avatar" v-bind:src="topic.author.avatar_url | avatarCompat" v-on:click="openUser(topic.author.loginname)">
+                            <img class="avatar" :src="topic.author.avatar_url | avatarCompat" @click="openUser(topic.author.loginname)">
                         </td>
                         <td class="center">
                             <div class="line1">
-                                <span v-bind:class="{'tag-accent': topic.top, 'tag-normal': !topic.top}">{{topic | tabName}}</span>
+                                <span :class="{'tag-accent': topic.top, 'tag-normal': !topic.top}">{{topic | tabName}}</span>
                                 <span class="loginname text-primary">{{topic.author.loginname}}</span>
                             </div>
                             <div class="line2">
@@ -34,12 +34,12 @@
                             </div>
                         </td>
                         <td class="right">
-                            <img class="icon-button" v-bind:src="topic.is_collect ? 'img/ic_favorite_theme_24px.svg' : 'img/ic_favorite_outline_grey_24px.svg'" v-on:click="collectTopic(topic)">
+                            <img class="icon-button" :src="topic.is_collect ? 'img/ic_favorite_theme_24px.svg' : 'img/ic_favorite_outline_grey_24px.svg'" @click="collectTopic(topic)">
                         </td>
                     </tr>
                 </table>
             </div>
-            <div class="markdown-container" v-html="topic.content_html" v-on:click="openImageProxy($event)"></div>
+            <div class="markdown-container" v-html="topic.content_html" @click="openImageProxy($event)"></div>
         </div>
         <div class="item-gap"></div>
         <div class="list">
@@ -59,7 +59,7 @@
                             <table>
                                 <tr>
                                     <td class="left">
-                                        <img class="avatar" v-bind:src="reply.author.avatar_url | avatarCompat" v-on:click="openUser(reply.author.loginname)">
+                                        <img class="avatar" :src="reply.author.avatar_url | avatarCompat" @click="openUser(reply.author.loginname)">
                                     </td>
                                     <td class="center">
                                         <div class="line1">
@@ -73,13 +73,13 @@
                                         </div>
                                     </td>
                                     <td class="right1">
-                                        <img class="icon-button" v-bind:src="reply.ups.indexOf(userId) === -1 ? 'img/ic_thumb_up_grey_24px.svg' : 'img/ic_thumb_up_theme_24px.svg'" v-on:click="upReply(reply)">
+                                        <img class="icon-button" :src="reply.ups.indexOf(userId) === -1 ? 'img/ic_thumb_up_grey_24px.svg' : 'img/ic_thumb_up_theme_24px.svg'" @click="upReply(reply)">
                                     </td>
                                     <td class="right2">
                                         <span class="up-count icon-text text-secondary">{{reply.ups.length}}</span>
                                     </td>
                                     <td class="right3">
-                                        <img class="icon-button" src="img/ic_reply_grey_24px.svg" v-on:click="at(reply, positionMap)">
+                                        <img class="icon-button" src="img/ic_reply_grey_24px.svg" @click="at(reply, positionMap)">
                                     </td>
                                 </tr>
                             </table>
@@ -87,7 +87,7 @@
                         <div class="target-position text-accent" v-if="reply.reply_id">
                             回复：{{positionMap[reply.reply_id] + 1}}楼
                         </div>
-                        <div class="markdown-container" v-html="reply.content_html" v-on:click="openImageProxy($event)"></div>
+                        <div class="markdown-container" v-html="reply.content_html" @click="openImageProxy($event)"></div>
                     </div>
                     <div class="deep-line" v-if="position !== (topic.replies.length - 1)"></div>
                 </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -13,13 +13,13 @@
     <div class="cell" v-for="message in messages">
         <div class="main">
             <div class="top-container">
-                <img class="avatar" v-bind:src="message.author.avatar_url | avatarCompat" v-on:click="openUser(message.author.loginname)">
+                <img class="avatar" :src="message.author.avatar_url | avatarCompat" @click="openUser(message.author.loginname)">
                 <div class="info">
                     <div class="line1">
                         <span class="loginname text-primary">
                             {{message.author.loginname}}
                         </span>
-                        <span class="time" v-bind:class="{'text-secondary': message.has_read, 'text-accent': !message.has_read}">
+                        <span class="time" :class="{'text-secondary': message.has_read, 'text-accent': !message.has_read}">
                             {{message.create_at | relativeTimeSpan}}
                         </span>
                     </div>
@@ -31,8 +31,8 @@
                     </div>
                 </div>
             </div>
-            <div class="markdown-container" v-if="message.reply && message.reply.id" v-html="message.reply.content_html" v-on:click="openImageProxy($event)"></div>
-            <div class="reference-container"  v-on:click="openTopic(message.topic.id)">
+            <div class="markdown-container" v-if="message.reply && message.reply.id" v-html="message.reply.content_html" @click="openImageProxy($event)"></div>
+            <div class="reference-container" @click="openTopic(message.topic.id)">
                 <div class="topic-title text-secondary">话题：{{message.topic.title}}</div>
             </div>
         </div>
