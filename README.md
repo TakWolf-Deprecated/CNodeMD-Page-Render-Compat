@@ -1,4 +1,4 @@
-# CNodeMD客户端页面渲染兼容方案 #
+# CNodeMD客户端页面渲染兼容方案
 
 主要为 [CNode-Material-Design](https://github.com/TakWolf/CNode-Material-Design) 在Markdown渲染上提供一种兼容方案
 
@@ -16,21 +16,13 @@ UI上需要和原生渲染基本保持一致，包含白天和夜间两种主题
 
 也就是说，这个项目仅仅实现UI的渲染，网络数据仍然通过原生代码获取
 
-## Credits ##
+## Credits
 
 - [Vue.js](http://cn.vuejs.org)
 
 - [github-markdown-css](https://github.com/sindresorhus/github-markdown-css)
 
-## Author ##
-
-TakWolf
-
-[takwolf@foxmail.com](mailto:takwolf@foxmail.com)
-
-[http://takwolf.com](http://takwolf.com)
-
-## License ##
+## License
 
 ```
 Copyright 2016 TakWolf
